@@ -11,7 +11,7 @@
   ],
   "require": {
     "ext-pdo": "*",
-    "brightalley/lti-1p3": "dev-master",
+    "brightalley/lti-1p3": "dev-master"
   },
   "autoload": {
     "psr-4": {
