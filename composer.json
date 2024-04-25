@@ -3,8 +3,14 @@
   "description": "A Laravel wrapper for https://github.com/longhornopen/LTI-PHP",
   "keywords": ["laravel","lti"],
   "license": "LGPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/brightalley/LTI-1p3-Tool-Provider-Library-PHP.git"
+    }
+  ],
   "require": {
-    "longhornopen/lti": "^5.0"
+    "brightalley/lti-1p3": "*"
   },
   "autoload": {
     "psr-4": {
