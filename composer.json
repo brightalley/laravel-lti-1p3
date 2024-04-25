@@ -10,7 +10,7 @@
     }
   ],
   "require": {
-    "brightalley/lti-1p3": "*"
+    "brightalley/lti-1p3": "dev-main"
   },
   "autoload": {
     "psr-4": {
