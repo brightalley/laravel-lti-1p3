@@ -4,7 +4,7 @@
   "keywords": ["laravel","lti"],
   "license": "LGPL-3.0-or-later",
   "require": {
-    "longhornopen/lti": "^5.0"
+    "brightalley/lti-1p3": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -20,5 +20,11 @@
         "LTI": "LonghornOpen\\LaravelCelticLTI\\LtiFacade"
       }
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/brightalley/LTI-1p3-Tool-Provider-Library-PHP.git"
+    }
+  ]
 }
