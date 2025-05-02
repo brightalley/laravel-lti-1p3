@@ -41,11 +41,6 @@ class LtiTool extends LTI\Tool
     // singleton provided by LtiTool::getLtiTool() instead.
     public function __construct($dataConnector = null)
     {
-        if ($dataConnector === null) {
-            $pdo = DB::connection()->getPdo();
-            $dbTableNamePrefix = config('database.connections.' . config('database.default') . '.prefix');
-            $dataConnector = LTI\DataConnector\DataConnector::getDataConnector($pdo, $dbTableNamePrefix, 'pdo');
-        }
         parent::__construct($dataConnector);
 
         parent::$defaultTool = $this;
@@ -165,7 +160,7 @@ class LtiTool extends LTI\Tool
      *
      * @return bool
      */
-    public static function shouldRunMigrations()
+    public static function shouldRunMigrations(): bool
     {
         return static::$runsMigrations;
     }
@@ -175,7 +170,7 @@ class LtiTool extends LTI\Tool
      *
      * @return static
      */
-    public static function ignoreMigrations()
+    public static function ignoreMigrations(): LtiTool
     {
         static::$runsMigrations = false;
 
