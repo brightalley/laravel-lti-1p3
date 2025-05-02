@@ -19,6 +19,13 @@ class LtiTool extends LTI\Tool
 
     protected static $singleton_tool = null;
 
+    /**
+     * Determine if Laravel LTI's 1p3 migrations will be run.
+     *
+     * @var bool
+     */
+    public static $runsMigrations = true;
+
     public static function getLtiTool($dataConnector = null) {
         // Disable dependence on a draft LTI spec that currently causes problems in Canvas
         // https://github.com/celtic-project/LTI-PHP/issues/46
@@ -151,5 +158,27 @@ class LtiTool extends LTI\Tool
     {
         $jwt = Jwt::getJwtClient();
         return $jwt::getJWKS($this->rsaKey, $this->signatureMethod, $this->kid);
+    }
+
+    /**
+     * Determine if Laravel LTI's 1p3 migrations should be run.
+     *
+     * @return bool
+     */
+    public static function shouldRunMigrations()
+    {
+        return static::$runsMigrations;
+    }
+
+    /**
+     * Configure Laravel LTI 1p3 to not register its migrations.
+     *
+     * @return static
+     */
+    public static function ignoreMigrations()
+    {
+        static::$runsMigrations = false;
+
+        return new static;
     }
 }

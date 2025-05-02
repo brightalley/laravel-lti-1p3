@@ -18,6 +18,10 @@ php artisan vendor:publish --provider="LonghornOpen\LaravelCelticLTI\LtiServiceP
 
 Run your app's migrations, which will install the 'lti2_*' database tables.
 
+**Migration Customization**
+
+If you are not going to use Laravel LTI's 1p3 default migrations, you should call the `LtiTool::ignoreMigrations()` method in the register method of your App\Providers\AppServiceProvider class.
+
 ```php
 php artisan migrate
 ```
